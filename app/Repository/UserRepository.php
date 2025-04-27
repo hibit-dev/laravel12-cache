@@ -33,4 +33,10 @@ readonly class UserRepository implements UserRepositoryInterface
 
         return array_merge($user, ['source' => $source]);
     }
+
+    public function delete(array $user): void
+    {
+        $this->databaseUserRepository->delete($user);
+        $this->cacheUserRepository->delete($user);
+    }
 }

@@ -21,4 +21,11 @@ class UserRepository implements UserRepositoryInterface
     {
         return Cache::get(sprintf('%s:%d', self::CACHE_PREFIX, $userId));
     }
+
+    public function delete(array $user): void
+    {
+        $userId = $user['id'];
+
+        Cache::forget(sprintf('%s:%d', self::CACHE_PREFIX, $userId));
+    }
 }

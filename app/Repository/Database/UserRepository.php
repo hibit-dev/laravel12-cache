@@ -20,4 +20,9 @@ class UserRepository implements UserRepositoryInterface
             'name' => 'John',
         ];
     }
+
+    public function delete(array $user): void
+    {
+        // TODO delete from DB
+    }
 }
