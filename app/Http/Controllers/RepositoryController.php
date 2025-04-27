@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Repository\UserRepositoryInterface;
+
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,10 +15,10 @@ class RepositoryController extends Controller
         return response(null, Response::HTTP_CREATED)->json();
     }
 
-    public function get(): JsonResponse
+    public function get(UserRepositoryInterface $userRepository): JsonResponse
     {
-        $data = [];
+        $user = $userRepository->getById(1);
 
-        return response()->json($data);
+        return response()->json($user);
     }
 }
