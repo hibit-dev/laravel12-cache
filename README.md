@@ -6,6 +6,9 @@ Discover a world of knowledge hosted on [HiBit website](https://www.hibit.dev). 
 
 You'll find detailed instructions and comprehensive documentation for this repository on:
 - [Repository cache in Laravel](https://www.hibit.dev/posts/241/repository-cache-in-laravel)
+- [The Repository Pattern](https://www.hibit.dev/posts/123/the-repository-pattern)
+- [How to install and configure Redis on Ubuntu](https://www.hibit.dev/posts/11/how-to-install-and-configure-redis-on-ubuntu)
+- [Create Laravel 12 project from scratch](https://www.hibit.dev/posts/240/create-laravel-12-project-from-scratch)
 
 The documentation offers clear guidance on wiring and using the module, providing practical insights for a smooth integration into your projects. Take a closer look at the documentation to enhance your understanding, and don't hesitate to reach out for any specific guidance or support.
 
