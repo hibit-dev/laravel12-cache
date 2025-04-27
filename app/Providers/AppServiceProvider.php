@@ -3,8 +3,7 @@
 namespace App\Providers;
 
 use App\Repository\UserRepositoryInterface;
-
-use App\Repository\Database\UserRepository;
+use App\Repository\UserRepository;
 
 use Illuminate\Support\ServiceProvider;
 
