@@ -6,11 +6,18 @@ use App\Repository\UserRepositoryInterface;
 
 class UserRepository implements UserRepositoryInterface
 {
-    public function getById(int $userId): array
+    public function store(array $user): void
     {
+        // TODO store in DB
+    }
+
+    public function getById(int $userId): ?array
+    {
+        // TODO retrieve from DB
+
         return [
             'id' => $userId,
-            'source' => 'database',
+            'name' => 'John',
         ];
     }
 }

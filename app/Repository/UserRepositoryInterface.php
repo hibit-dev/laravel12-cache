@@ -4,5 +4,7 @@ namespace App\Repository;
 
 interface UserRepositoryInterface
 {
-    public function getById(int $userId): array;
+    public function store(array $user): void;
+
+    public function getById(int $userId): ?array;
 }
