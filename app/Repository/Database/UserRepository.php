@@ -3,8 +3,9 @@
 namespace App\Repository\Database;
 
 use App\Repository\UserRepositoryInterface;
+use App\Repository\TaggedUserRepositoryInterface;
 
-class UserRepository implements UserRepositoryInterface
+class UserRepository implements UserRepositoryInterface, TaggedUserRepositoryInterface
 {
     public function store(array $user): void
     {
