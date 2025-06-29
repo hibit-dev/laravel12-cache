@@ -6,6 +6,7 @@ Discover a world of knowledge hosted on [HiBit website](https://www.hibit.dev). 
 
 You'll find detailed instructions and comprehensive documentation for this repository on:
 - [Repository cache in Laravel](https://www.hibit.dev/posts/241/repository-cache-in-laravel)
+- [Tag-based cache inside Laravel repositories](https://www.hibit.dev/posts/250/repository-cache-with-tags-in-laravel)
 - [The Repository Pattern](https://www.hibit.dev/posts/123/the-repository-pattern)
 - [How to install and configure Redis on Ubuntu](https://www.hibit.dev/posts/11/how-to-install-and-configure-redis-on-ubuntu)
 - [Create Laravel 12 project from scratch](https://www.hibit.dev/posts/240/create-laravel-12-project-from-scratch)
