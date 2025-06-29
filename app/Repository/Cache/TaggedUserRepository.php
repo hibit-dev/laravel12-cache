@@ -35,13 +35,11 @@ class TaggedUserRepository implements TaggedUserRepositoryInterface
     {
         $this->delete($user); // ensure old entry is removed before updating
 
-        $userId = $user['id'];
-
         $this->cache->get(
-            sprintf('%s:%d', self::CACHE_PREFIX, $userId),
+            $this->key((int) $user['id']),
             function (ItemInterface $item) use ($user) {
-                $item->expiresAfter(self::CACHE_TTL_SECONDS);
                 $item->tag(self::CACHE_TAG);
+                $item->expiresAfter(self::CACHE_TTL_SECONDS);
 
                 return $user;
             }
@@ -51,9 +49,10 @@ class TaggedUserRepository implements TaggedUserRepositoryInterface
     public function getById(int $userId): ?array
     {
         return $this->cache->get(
-            sprintf('%s:%d', self::CACHE_PREFIX, $userId),
+            $this->key($userId),
             function (ItemInterface $item) {
                 $item->tag(self::CACHE_TAG);
+
                 return null;
             }
         );
@@ -61,13 +60,16 @@ class TaggedUserRepository implements TaggedUserRepositoryInterface
 
     public function delete(array $user): void
     {
-        $userId = $user['id'];
-
-        $this->cache->delete(sprintf('%s:%d', self::CACHE_PREFIX, $userId));
+        $this->cache->delete($this->key((int) $user['id']));
     }
 
-    public function clear(): void
+    public function flush(): void
     {
         $this->cache->invalidateTags([self::CACHE_TAG]);
+    }
+
+    private function key(int $userId): string
+    {
+        return sprintf('%s:%d', self::CACHE_PREFIX, $userId);
     }
 }
